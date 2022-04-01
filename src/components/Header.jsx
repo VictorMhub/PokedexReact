@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import Context from '../context/Context'
+import  '../style.css'
 
 function Header () {
     const { onInputChange } = useContext(Context);
@@ -7,8 +8,9 @@ function Header () {
 
     return(
         <header>
-            <label htmlFor="generation">
+            <label htmlFor="generation" className="regiao">
                 Escolha a Região:
+                
                 <select name="generation" onChange={onInputChange}>
                     <option value={0}>Kanto</option>
                     <option value={151}>Johto</option>

@@ -3,7 +3,7 @@ import Context from "../context/Context";
 import '../style.css'
 
 function Card () {
-    const { pokemonUrl, pokemonUrlLength, gens } = useContext(Context) 
+    const { pokemonUrl, pokemonUrlLength } = useContext(Context) 
     const NUMERO_DE_MOVES = 4
     const { moves } = pokemonUrl
     const { stats } = pokemonUrl
@@ -38,7 +38,7 @@ function Card () {
             className="pokemon_image"
          />
          </div>
-
+         <div className="pokemon_stats">
          <h3>Moves:</h3>   
          {filteredMoves.map((move) => (
             <li key={move.move.name}>{move.move.name}</li>
@@ -49,6 +49,7 @@ function Card () {
          {stats.map((stat) => (
             <li key={stat.stat.name}>{`${stat.stat.name}: ${stat.base_stat}`}</li>
          ))}
+         </div>
         </section>
         }
    </> )
